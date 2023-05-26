@@ -1,11 +1,11 @@
-# Message-Stats-Bot
+# Message Stats Bot
 A Discord bot that generates message statistics
 
 ## Usage
 This bot does not have a public instance. If you want to use it, you will have to host it yourself.
 It's assumed by default that you use IntelliJ IDEA as your IDE and know how to use it.
 Please note that this bot is not intended to be used as a public bot. It is intended to be used in a few guilds at most. It does not automatically handle data left by guilds that it is no longer in, although, instructions on how to do it manually are provided.
-It is also assumed that you know how to create a bot application in the Discord Developer Portal and how to invite it to your guild. Should you need any help, please check the (JDA Wiki)[https://jda.wiki/using-jda/getting-started/]
+It is also assumed that you know how to create a bot application in the Discord Developer Portal and how to invite it to your guild. Should you need any help, please check the [JDA Wiki](https://jda.wiki/using-jda/getting-started/)
 1. Clone the repository
 2. Open the project in IntelliJ IDEA
 3. Build the project
@@ -41,7 +41,7 @@ If you are using MacOS, please follow the Linux instructions. Both MacOS and Lin
 
 ## How to delete leftover data
 
-This bot uses Realm as its database. Realm stores its data in files with the extension `.realm` (by default it has no extension but thats a matter of configuration). The bot stores its data in a file called `channelstats.realm` in the root directory of the bot. You can open this file using (Realm Studio)[https://github.com/realm/realm-studio/releases]
+This bot uses Realm as its database. Realm stores its data in files with the extension `.realm` (by default it has no extension but thats a matter of configuration). The bot stores its data in a file called `channelstats.realm` in the root directory of the bot. You can open this file using [Realm Studio](https://github.com/realm/realm-studio/releases)
 To delete leftover data, you will need to open the file in Realm Studio and delete the data manually. If you wish to delete data related to a certain guild, you'll first need to know it's guild id. After that, you can delete it's corresponding `RealmGuild` and all references to it will become null. Make sure to delete all null references as they're going to cause problems.
 The file can be edited while the bot is running, but it is recommended to stop the bot before editing it.
 
