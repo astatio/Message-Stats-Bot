@@ -1,0 +1,68 @@
+plugins {
+    kotlin("jvm") version "1.8.21"
+    application
+    id("com.github.johnrengelman.shadow") version "8.1.0"
+    id("com.github.ben-manes.versions") version "0.46.0"
+    id("io.realm.kotlin") version "1.9.0"
+}
+
+group = "madeby.astatio"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    google()
+    mavenCentral()
+    maven {
+        url = uri("https://m2.dv8tion.net/releases")
+        name = "m2-dv8tion"
+    }
+    maven("https://jitpack.io/")
+    maven("https://plugins.gradle.org/m2/")
+    maven("https://oss.sonatype.org/content/repositories/snapshots")
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+}
+
+dependencies {
+    testImplementation(kotlin("test"))
+
+    //JDA, KTX, COROUTINES
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("net.dv8tion:JDA:5.0.0-beta.9")
+    implementation("com.github.minndevelopment:jda-ktx:17eb77a") // can't use 9fc90f6 as its not on jitpack
+
+    //LOGGING
+    implementation("ch.qos.logback:logback-classic:1.2.11") // JDA not compatible with 1.4.0
+    implementation("ch.qos.logback:logback-core:1.2.11") // JDA not compatible with 1.4.0
+
+    //DATABASE
+    implementation("io.realm.kotlin:library-base:1.9.0")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+kotlin {
+    jvmToolchain(19)
+    sourceSets.all {
+        languageSettings {
+            // languageVersion = "2.0"
+        }
+    }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "19"
+    }
+
+}
+
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    isZip64 = true
+    // minimize() it does not work with Caffeine unfortunately
+}
+
+application {
+    mainClass.set("MainKt")
+}
