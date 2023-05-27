@@ -77,7 +77,7 @@ fun main() {
 
     val scheduledExecutorService = Executors.newScheduledThreadPool(1)
     val scope = CoroutineScope(Dispatchers.Default)
-    val runTime = LocalTime.of(22, 35) // 00:00 - for testing purposed this can be adjusted to a few minutes ahead of the current time
+    val runTime = LocalTime.of(0, 0) // 00:00 - for testing purposed this can be adjusted to a few minutes ahead of the current time
     // Calculate the initial delay by getting the difference between now and the next run time
     var initialDelay = LocalTime.now().until(runTime, ChronoUnit.MINUTES)
     // To avoid it sending immediately on startup, add 24 hours to it
