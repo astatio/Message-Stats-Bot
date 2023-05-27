@@ -1,5 +1,8 @@
+<img align="right" src="https://i.imgur.com/VUjC16w.png" height="250" width="250">
+
 # Message Stats Bot
 A Discord bot that generates message statistics
+
 
 ## Usage
 This bot does not have a public instance. If you want to use it, you will have to host it yourself.
