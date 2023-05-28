@@ -64,7 +64,7 @@ fun infoCommand(event: SlashCommandInteractionEvent) {
                         "Each 'day' displayed here is based on the host's time zone." +
                         "The bot is currently hosted in the UTC ${OffsetDateTime.now().offset}" +
                         "The next stats announcement will be sent at ${TimeFormat.TIME_SHORT.format(nextMidnight)}" +
-                        "For more information, please check the GitHub page: www.example.com"
+                        "For more information, please check the GitHub page: https://github.com/astatio/Message-Stats-Bot"
             }
             footer {
                 name = "Current host time: ${dtFormatter.format(LocalTime.now())}"
