@@ -28,11 +28,10 @@ dependencies {
     //JDA, KTX, COROUTINES
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("net.dv8tion:JDA:5.0.0-beta.9")
-    implementation("com.github.minndevelopment:jda-ktx:17eb77a") // can't use 9fc90f6 as its not on jitpack
+    implementation("io.github.minndevelopment:jda-ktx:9370cb1")
 
     //LOGGING
-    implementation("ch.qos.logback:logback-classic:1.2.11") // JDA not compatible with 1.4.0
-    implementation("ch.qos.logback:logback-core:1.2.11") // JDA not compatible with 1.4.0
+    implementation("ch.qos.logback:logback-classic:1.4.0")
 
     //DATABASE
     implementation("io.realm.kotlin:library-base:1.9.0")

@@ -6,8 +6,6 @@ import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel
 import net.dv8tion.jda.api.entities.channel.unions.GuildChannelUnion
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent
 import net.dv8tion.jda.api.utils.TimeFormat
-import net.dv8tion.jda.api.utils.TimeUtil
-import net.dv8tion.jda.api.utils.Timestamp
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.time.*
@@ -25,8 +23,7 @@ suspend fun onSlashCommandInteraction(event: SlashCommandInteractionEvent) {
 fun customEmbed(
     title: String,
     fields: Map<GuildChannel, Long>
-): MessageEmbed {
-    return Embed {
+): MessageEmbed = Embed {
         this.title = title
         color = embColor
         fields.forEach {
@@ -40,7 +37,6 @@ fun customEmbed(
             name = "Current host time: ${dtFormatter.format(LocalTime.now())}"
         }
     }
-}
 
 fun yesterdayCommand(event: SlashCommandInteractionEvent) {
     val yesterdayStats = mapYesterdayStatistics(event)

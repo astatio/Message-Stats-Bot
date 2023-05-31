@@ -1,3 +1,4 @@
+import dev.minn.jda.ktx.events.getDefaultScope
 import dev.minn.jda.ktx.jdabuilder.createJDA
 import io.realm.kotlin.MutableRealm
 import io.realm.kotlin.Realm
@@ -6,8 +7,6 @@ import io.realm.kotlin.UpdatePolicy
 import io.realm.kotlin.ext.query
 import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.PrimaryKey
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import net.dv8tion.jda.api.entities.Activity
 import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel
@@ -15,6 +14,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import net.dv8tion.jda.api.requests.GatewayIntent
 import net.dv8tion.jda.api.utils.TimeFormat
 import net.dv8tion.jda.api.utils.cache.CacheFlag
+import org.slf4j.LoggerFactory
 import java.time.LocalTime
 import java.time.ZonedDateTime
 import java.time.temporal.ChronoUnit
@@ -46,6 +46,8 @@ val realm = Realm.open(
 )
 
 
+val logger = LoggerFactory.getLogger(main()::class.java)
+
 //The purpose of this bot is to track the number of messages sent per text channel on a guild per day
 //Every midnight the stats are prepared and sent to the bot channel
 fun main() {
@@ -76,7 +78,7 @@ fun main() {
 
 
     val scheduledExecutorService = Executors.newScheduledThreadPool(1)
-    val scope = CoroutineScope(Dispatchers.Default)
+    val scope = getDefaultScope()
     val runTime = LocalTime.of(0, 0) // 00:00 - for testing purposed this can be adjusted to a few minutes ahead of the current time
     // Calculate the initial delay by getting the difference between now and the next run time
     var initialDelay = LocalTime.now().until(runTime, ChronoUnit.MINUTES)
@@ -124,7 +126,7 @@ fun main() {
                     )?.queue()
                 }
             } catch (e: Exception) {
-                e.printStackTrace()
+                logger.error("An exception occurred while trying to send the stats", e)
             }
         }
     }, initialDelay, period, TimeUnit.MINUTES)
