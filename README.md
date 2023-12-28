@@ -1,5 +1,8 @@
 <img align="right" src="https://i.imgur.com/VUjC16w.png" height="250" width="250">
 
+> [!WARNING]
+> This will **not** run on a Raspberry Pi or any other device running Linux on Arm64. This issue can be tracked here: https://github.com/realm/realm-kotlin/issues/617
+
 # Message Stats Bot
 A Discord bot that generates message statistics
 
@@ -8,7 +11,6 @@ A Discord bot that generates message statistics
 This bot does not have a public instance. If you want to use it, you will have to host it yourself.
 It's assumed by default that you use IntelliJ IDEA as your IDE and know how to use it.
 Please note that this bot is not intended to be used as a public bot. It is intended to be used in a few guilds at most. It does not automatically handle data left by guilds that it is no longer in, although, instructions on how to do it manually are provided.
-It will **not** work on a Raspberry Pi due to Realm (the database) not supporting Linux on arm64 (issue opened here: https://github.com/realm/realm-kotlin/issues/617)
 It is also assumed that you know how to create a bot application in the Discord Developer Portal and how to invite it to your guild. Should you need any help, please check the [JDA Wiki](https://jda.wiki/using-jda/getting-started/)
 1. Clone the repository
 2. Open the project in IntelliJ IDEA
