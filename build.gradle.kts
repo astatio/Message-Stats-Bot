@@ -1,8 +1,8 @@
 plugins {
-    kotlin("jvm") version "1.8.22"
+    kotlin("jvm") version "1.9.10"
     application
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("io.realm.kotlin") version "1.9.1"
+    id("io.realm.kotlin") version "1.11.1"
 }
 
 group = "madeby.astatio"
@@ -33,7 +33,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.4.8")
 
     //DATABASE
-    implementation("io.realm.kotlin:library-base:1.9.1")
+    implementation("io.realm.kotlin:library-base:1.11.1")
 }
 
 tasks.test {
