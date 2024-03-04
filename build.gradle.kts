@@ -30,7 +30,7 @@ dependencies {
     implementation("io.github.minndevelopment:jda-ktx:9370cb1")
 
     //LOGGING
-    implementation("ch.qos.logback:logback-classic:1.4.8")
+    implementation("ch.qos.logback:logback-classic:1.5.2")
 
     //DATABASE
     implementation("io.realm.kotlin:library-base:1.11.1")
