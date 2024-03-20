@@ -33,7 +33,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.4.8")
 
     //DATABASE
-    implementation("io.realm.kotlin:library-base:1.11.1")
+    implementation("io.realm.kotlin:library-base:1.14.1")
 }
 
 tasks.test {
