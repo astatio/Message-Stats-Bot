@@ -40,20 +40,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
-kotlin {
-    jvmToolchain(19)
-    sourceSets.all {
-        languageSettings {
-            // languageVersion = "2.0"
-        }
-    }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = "19"
-    }
-
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(22)
+	}
 }
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
