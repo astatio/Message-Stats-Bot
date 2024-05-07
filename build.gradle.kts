@@ -34,6 +34,9 @@ dependencies {
 
     //DATABASE
     implementation("io.realm.kotlin:library-base:1.14.1")
+
+    //DATA PLOTTING OR SOMETHING
+    implementation("org.jetbrains.kotlinx:kandy-lets-plot:0.6.0-dev-48")
 }
 
 tasks.test {

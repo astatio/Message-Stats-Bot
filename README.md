@@ -4,8 +4,13 @@
 > This will **not** run on a Raspberry Pi or any other device running Linux on Arm64. This issue can be tracked here: https://github.com/realm/realm-kotlin/issues/617
 
 # Message Stats Bot
-A Discord bot that generates message statistics
+A very experimental Discord bot that generates message statistics
 
+## Why would i use this instead of Server Insights?
+There's very few reasons why you would consider this instead of server insights.
+1. The server is not a community server
+2. You want a different and simpler way to visualize changes overtime
+3. You want to
 
 ## Usage
 This bot does not have a public instance. If you want to use it, you will have to host it yourself.
@@ -54,6 +59,14 @@ The file can be edited while the bot is running, but it is recommended to stop t
 ## Commands
 
 The bot only interacts through slash commands. Here is a list:
+
+- `set channel` - Sets the channel where the bot will send scheduled messages stats.
+- `set daily` - Sets the daily message stats notification. (not available yet)
+- `set weekly` - Sets the weekly message stats notification. (not available yet)
+- `set monthly` - Sets the monthly message stats notification. (not available yet)
+
+
+
 - `yesterday` - Shows the message stats for the previous day (according to the host's timezone)
 - `today` - Shows the ongoing message stats for the current day (according to the host's timezone)
 - `setchannel` - Sets the channel where the bot will send the message stats.
