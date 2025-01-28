@@ -26,7 +26,7 @@ dependencies {
 
     //JDA, KTX, COROUTINES
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
-    implementation("net.dv8tion:JDA:5.0.2")
+    implementation("net.dv8tion:JDA:5.2.3")
     implementation("io.github.minndevelopment:jda-ktx:9370cb1")
 
     //LOGGING
