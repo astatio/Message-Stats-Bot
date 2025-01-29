@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.0.255-SNAPSHOT"
+    kotlin("jvm") version "2.1.20-Beta1"
     application
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("io.realm.kotlin") version "3.0.0"
