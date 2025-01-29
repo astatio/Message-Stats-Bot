@@ -25,7 +25,7 @@ dependencies {
     testImplementation(kotlin("test"))
 
     //JDA, KTX, COROUTINES
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
     implementation("net.dv8tion:JDA:5.2.3")
     implementation("io.github.minndevelopment:jda-ktx:9370cb1")
 
